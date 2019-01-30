@@ -1,0 +1,21 @@
+package com.example.demo.service.impl;
+
+import com.example.demo.dao.UserInfoMapper;
+import com.example.demo.model.UserInfo;
+import com.example.demo.service.UserInfoService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
+@Service
+public class UserInfoServiceImpl implements UserInfoService {
+
+    @Resource
+    private UserInfoMapper userInfoMapper;
+
+    public List<UserInfo> selectById(Integer id){
+        return userInfoMapper.selectById(id);
+    }
+
+}
